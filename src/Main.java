@@ -1,25 +1,24 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
 void main() {
-    /*Transport[] transport = new Transport[5];
-    transport[0]= new Transport();
-    transport[1] = new Boat();
-    transport[2]= new Car();
-    for(int i = 0; i<3; i++){
-        System.out.print("i = "+i + ": ");
-        transport[i].move();
-    }*/
+    Circle circle = new Circle();
+    Rectangle rectangle = new Rectangle();
+    Shape shape = new Shape();
 
-    Animal[] animals = new Animal[2];
-    animals[0] = new Dog();
-    animals[1] = new Cat();
+    circle.setRadius(2.0);
+    rectangle.setWidthHeight(3.0, 1.0);
 
-    animals[0].name = "Бобик";
-    animals[1].name = "Мурзик";
+    Shape[] shapes = {
+            circle,
+            rectangle,
+            shape
+    };
 
-    for(int i = 0; i<2; i++){
-        System.out.print("i = "+i + ": ");
-        animals[i].info();
-        animals[i].sound();
+    for(Shape s: shapes){
+        System.out.println("Площадь: " + s.area());
     }
+
+    ShapeUtils shapeUtils = new ShapeUtils();
+    shapeUtils.printArea(circle);
+    shapeUtils.printArea(rectangle);
+    shapeUtils.printArea(shape);
 }
